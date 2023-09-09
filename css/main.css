@@ -1,0 +1,128 @@
+body::before { 
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: inherit;
+    background-size: cover;
+    filter: blur(3px) brightness(75%);
+    z-index: -1;
+}
+body { 
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    position: relative;
+    background-attachment: fixed;
+    background-color:#5a5a5a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    overflow: auto; /* Enable scrolling if content overflows */
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #7289DA;
+}
+
+#content {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 1);
+    max-width: 80%;
+}
+h1 {
+    font-size: 32px;
+}
+p {
+    font-size: 24px;
+}
+.button {
+    background-color: #7289DA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: transform 0.3s;
+	text-shadow: none;
+}
+.button:hover {
+    transform: scale(1.05);
+}
+
+/* Modifications for smaller screens */
+@media (max-width: 600px) {
+    #content {
+        width: 100%;
+    }
+}
+
+
+div.options-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+a.option-box {
+    background-color: rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 20px;
+    flex-basis: calc(25% - 20px);
+    min-width: 250px;
+    box-sizing: border-box;
+    color: white;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+a.option-box:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+a.option-box h3 {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.option-box p {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Modifications for smaller screens */
+@media (max-width: 600px) {
+    a.option-box {
+        flex-basis: 100%;
+    }
+}
