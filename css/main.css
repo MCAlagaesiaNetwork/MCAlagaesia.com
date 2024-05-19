@@ -11,19 +11,26 @@ body::before {
     filter: blur(3px) brightness(75%);
     z-index: -1;
 }
-body { 
+body {
     margin: 0;
     text-align: center;
     color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     position: relative;
     background-attachment: fixed;
-    background-color:#5a5a5a;
+    background-color: #5a5a5a;
+}
+
+#above-fold {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Full viewport height */
-    overflow: auto; /* Enable scrolling if content overflows */
+    min-height: 95vh;
+}
+
+#below-fold {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 nav {
@@ -37,14 +44,14 @@ nav {
     background: rgba(0, 0, 0, 0.5);
 }
 
-nav a {
+nav a, #below-fold a {
     color: white;
     text-decoration: none;
     font-size: 20px;
     transition: color 0.3s;
 }
 
-nav a:hover {
+nav a:hover, #below-fold a:hover {
     color: #7289DA;
 }
 
@@ -57,6 +64,10 @@ h1 {
 }
 p {
     font-size: 24px;
+}
+
+.legal {
+    font-size:16px;
 }
 .button {
     background-color: #7289DA;
@@ -125,4 +136,47 @@ a.option-box p {
     a.option-box {
         flex-basis: 100%;
     }
+}
+
+.content-columns {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.content-columns > div {
+    flex-basis: 30%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Modifications for smaller screens */
+@media (max-width: 600px) {
+    .content-columns > div {
+        flex-basis: 100%;
+    }
+}
+
+/* WebKit-based browsers (Chrome, Safari, Opera) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #1c1c1c;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #6e6e6e;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #8c8c8c;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #6e6e6e #1c1c1c;
 }
